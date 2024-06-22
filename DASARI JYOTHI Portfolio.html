@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dasari Jyothi - Personal Portfolio</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes bounceIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: #f4f4f4;
+            color: #333;
+            animation: fadeIn 1s ease-in;
+        }
+
+        header {
+            background: #000;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            animation: slideIn 1s ease-in;
+        }
+
+        nav a {
+            color: #ffcc00;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+            cursor: pointer;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: #ffcc00;
+            transition: width 0.3s ease;
+            -webkit-transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .left-column, .right-column {
+            width: 100%;
+        }
+
+        .right-column {
+            text-align: center;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .section {
+            display: none;
+            margin: 2rem 0;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+            margin-bottom: 1rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .section p, .section ul {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .profile-pic {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto;
+            border-radius: 50%;
+            width: 250px;
+            height: auto;
+            animation: bounceIn 1s ease-in;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            padding: 0.5rem;
+            background: #ffcc00;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background: #ff9900;
+        }
+
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .project {
+            background: #ffffff;
+            padding: 1rem;
+            border-radius: 5px;
+            transition: transform 0.3s ease, background 0.3s ease;
+            border: 1px solid #ddd;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            background: #ffcc00;
+        }
+
+        .project h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .project p {
+            margin: 0.5rem 0 0 0;
+        }
+
+        footer {
+            background: #000;
+            color: #ffcc00;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            animation: slideIn 1s ease-in;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media(min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+
+            .left-column, .right-column {
+                width: 48%;
+            }
+        }
+        .ht {
+            margin-top: 20%;
+            font-size: 20px;
+            color: black;
+        }
+        .ht h2 {
+            font-size: 40px;
+            color: black;
+        }
+        .ht h2 span {
+            color: #ff004f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dasari Jyothi</h1>
+        <nav>
+            <a href="#about" onclick="showSection('about')">About</a>
+            <a href="#projects" onclick="showSection('projects')">Projects</a>
+            <a href="#skills" onclick="showSection('skills')">Skills</a>
+            <a href="#education" onclick="showSection('education')">Education</a>
+            <a href="#contact" onclick="showSection('contact')">Contact</a>
+            <a href="#certifications" onclick="showSection('certifications')">Certifications</a>
+            <a href="#internships" onclick="showSection('internships')">Internships</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="left-column">
+            <section id="about" class="section active">
+                <h2>About Me</h2>
+                <p>Hello! I'm JYOTHI DASARI, a passionate web developer with a love for creating dynamic and responsive websites. Known for my strong work ethic, adaptability, and collaborative nature, I thrive in dynamic environments where I can contribute to team success and drive impactful results. Committed to continuous learning and growth.</p>
+            </section>
+            <section id="skills" class="section">
+                <h2>Skills</h2>
+                <h3>Technical Skills</h3>
+                <ul>
+                    <li>HTML & CSS</li>
+                    <li>JavaScript</li>
+                    <li>C-Language</li>
+                    <li>SQL</li>
+                    <li>Machine learning</li>
+                    <li>Bootstrap</li>
+                </ul>
+                <h3>Soft Skills</h3>
+                <ul>
+                    <li>Strong Communication</li>
+                    <li>Team Management</li>
+                    <li>Collaboration</li>
+                </ul>
+            </section>
+            <section id="education" class="section">
+                <h2>Education</h2>
+                <p><strong>Bachelor of Technology in Computer Science</strong><br>
+                Rajiv Gandhi University of Knowledge Technologies, Srikakulam, Dec 2021 - Present<br>
+                CGPA: 8.0</p>
+                <p><strong>PUC</strong><br>
+                Rajiv Gandhi University of Knowledge Technologies, Srikakulam, Jun 2019 - Sep 2021<br>
+                CGPA: 8.65</p>
+                <p><strong>Secondary School Education</strong><br>
+                K.G.B.V School, Dattirajaru<br>
+                CGPA: 9.8</p>
+            </section>
+            <section id="certifications" class="section">
+                <h2>Certifications</h2>
+                <ul>
+                    <li><a href="https://courses.edx.org/certificates/828f51a05a954669a0cb0c5ec7752a8a?_gl=1*xljxli*_gcl_au*Njk1NjA2MzcyLjE3MTM3NjAxMzk.*_ga*NjM3NDM0NzE5LjE3MTM3NjAxMzk.*_ga_D3KS4KMDT0*MTcxOTA1NDk1My40LjEuMTcxOTA1NTA1Mi4yNC4wLjA">Machine Learning with Python from edX</a></li>
+                    <li><a href="https://courses.edx.org/certificates/5744cc62848b4e6fa1669698dd2e6027?_gl=1*k2hd0b*_gcl_au*Njk1NjA2MzcyLjE3MTM3NjAxMzk.*_ga*NjM3NDM0NzE5LjE3MTM3NjAxMzk.*_ga_D3KS4KMDT0*MTcxOTA1NDk1My40LjEuMTcxOTA1NTIwNS42MC4wLjA">Generative AI for Business from edX</a></li>
+                    <li><a href="https://www.credly.com/badges/34fe04b7-d921-4baa-b875-2b80a6d3839d/public_url">Getting Started with Enterprise Data Science</a></li>
+                </ul>
+            </section>
+            <section id="internships" class="section">
+                <h2>Internships</h2>
+                <p><strong>Web Development Intern at Academor</strong><br>
+                Duration: 2 Months (01/08/2023 - 30/09/2023)</p>
+                <p><strong>Web Development Intern at InternPE</strong><br>
+                Duration: 4 weeks (13/05/2024 - 09/06/2024)</p>
+            </section>
+        </div>
+        <div class="right-column">
+            <img src="https://i.imgur.com/cvnjIJe.jpeg" alt="Web Developer" class="profile-pic">
+        </div>
+    </div>
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>Twitter Sentiment Analysis</h3>
+                    <p>Role: Team Lead, Developer</p>
+                    <p>Managed a machine learning model to predict comments on Twitter based on sentiment analysis. Enhanced operational efficiency and growth for businesses through sentiment analysis on Twitter data.</p>
+                </div>
+                <div class="project">
+                    <h3>HarvestMax Intelligence Suit</h3>
+                    <p>Role: Developer</p>
+                    <p>Developed the HarvestMax Intelligence Suit using machine learning algorithms for personalized agricultural guidance. Ensured system scalability and reliability through rigorous testing and optimization techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact</h2>
+            <form class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p>Or click to email me: <a href="mailto:dasarijyothi538@gmail.com">dasarijyothi538@gmail.com</a></p>
+            <p>Connect with me on <a href="https://www.linkedin.com/in/dasari-jyothi-31a950269?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a> and <a href="https://github.com/jyothi190872">GitHub</a>.</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Dasari Jyothi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
+
+
+
